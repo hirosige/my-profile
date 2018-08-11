@@ -1,0 +1,67 @@
+<!--
+<template>
+  <div>
+    <h1>{{ person.fields.name }}</h1>
+    <ul>
+      <li v-for="(post, index) in posts" :key="index">
+        {{ post.fields.title }}
+      </li>
+    </ul>
+  </div>
+</template>
+-->
+
+<template>
+  <div>
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Welcome to the JavaScript SSR Blog.
+          </h1>
+          <h2 class="subtitle">
+            Hope you find something you like.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <posts />
+  </div>
+</template>
+
+<script>
+  import {createClient} from '~/plugins/contentful.js'
+  import Posts from '~/components/Posts.vue'
+
+  const client = createClient()
+
+  export default {
+    head: {
+      title: 'Home'
+    },
+    components: {
+      Posts
+    },
+    // `env` is available in the context object
+    asyncData ({env}) {
+      return Promise.all([
+        // fetch the owner of the blog
+        client.getEntries({
+          'sys.id': env.CTF_PERSON_ID
+        }),
+        // fetch all blog posts sorted by creation date
+        client.getEntries({
+          'content_type': env.CTF_BLOG_POST_TYPE_ID,
+          order: '-sys.createdAt'
+        })
+      ]).then(([entries, posts]) => {
+        // return data that should be available
+        // in the template
+        return {
+          person: entries.items[0],
+          posts: posts.items
+        }
+      }).catch(console.error)
+    }
+  }
+</script>
