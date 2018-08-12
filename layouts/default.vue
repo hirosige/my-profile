@@ -66,9 +66,19 @@
       </div>
     </nav>
     <nuxt/>
+    <PageFooter />
+    <div class="test">
+      Test
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+  import PageFooter from '~/components/PageFooter.vue'
+
+  export default {
+    components: {
+      PageFooter
+    },
+  }
 </script>

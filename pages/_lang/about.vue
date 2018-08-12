@@ -1,16 +1,16 @@
 <template>
-  <div class="Content">
-    <div class="container">
-      <h1 class="Content__Title">{{ $t('about.title') }}</h1>
-      <p>{{ $t('about.introduction') }}</p>
-    </div>
-  </div>
+    <title-hero :title="$t('about.title')"/>
 </template>
 
 <script>
-export default {
-  head() {
-    return { title: this.$t('about.title') }
+  import TitleHero from '~/components/TitleHero.vue'
+
+  export default {
+    components: {
+      TitleHero
+    },
+    head() {
+      return { title: this.$t('about.title') }
+    }
   }
-}
 </script>

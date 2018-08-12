@@ -1,9 +1,6 @@
 const config = require('./.contentful.json');
 
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'Hiro Site',
     meta: [
@@ -16,6 +13,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css' },
     ]
   },
+  css: [
+    '@css/app.css'
+  ],
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
@@ -29,17 +29,8 @@ module.exports = {
     '~/plugins/i18n.js',
     { src: '~/plugins/flag-icon.js', ssr: false }
   ],
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** Run ESLint on save
-    */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -48,6 +39,9 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+
+        const cssLoader = config.module.rules.find((loader) => loader.test.toString() === '/\\.css$/')
+        cssLoader.use.push('postcss-loader')
       }
     }
   }
