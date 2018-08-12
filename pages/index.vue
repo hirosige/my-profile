@@ -11,6 +11,7 @@
 </template>
 -->
 
+<!--
 <template>
   <section class="hero is-primary is-large">
   <div class="hero-head">
@@ -61,7 +62,14 @@
 </section>
   
 </template>
+-->
 
+<script>
+  import Index from '~/pages/_lang/index'
+  export default Index
+</script>
+
+<!--
 <script>
   import {createClient} from '~/plugins/contentful.js'
 
@@ -94,3 +102,4 @@
     }
   }
 </script>
+-->
