@@ -1,16 +1,31 @@
 {
   "links": {
-    "home": "Home",
-    "about": "About",
+    "home": "HOME",
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "blog": "BLOG",
+    "contact": "CONTACT",
     "english": "English version",
-    "japanese": "Japanese version"
+    "japanese": "JP"
   },
   "home": {
-    "title": "Welcome",
+    "title": "HOME",
     "introduction": "This is an introduction in English."
   },
   "about": {
-    "title": "About",
+    "title": "ABOUT ME",
+    "introduction": "This page is made to give you more informations."
+  },
+  "blog": {
+    "title": "BLOG",
+    "introduction": "This page is made to give you more informations."
+  },
+  "services": {
+    "title": "SERVICES",
+    "introduction": "This page is made to give you more informations."
+  },
+  "contact": {
+    "title": "CONTACT",
     "introduction": "This page is made to give you more informations."
   }
 }

@@ -25,7 +25,10 @@ module.exports = {
   router: {
     middleware: 'i18n'
   },
-  plugins: ['~/plugins/i18n.js'],
+  plugins: [
+    '~/plugins/i18n.js',
+    { src: '~/plugins/flag-icon.js', ssr: false }
+  ],
   /*
   ** Customize the progress bar color
   */

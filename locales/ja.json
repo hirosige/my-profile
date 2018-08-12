@@ -1,16 +1,31 @@
 {
   "links": {
-    "home": "Accueil",
-    "about": "Ã propos",
-    "english": "Version Anglaise",
-    "japanese": "Version FranÃ§aise"
+    "home": "HOME",
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "blog": "BLOG",
+    "contact": "CONTACT",
+    "english": "EN",
+    "japanese": "日本語"
   },
   "home": {
-    "title": "Bienvenue",
-    "introduction": "Ceci est un texte d'introduction en FranÃ§ais."
+    "title": "HOME",
+    "introduction": "This is an introduction in English."
   },
   "about": {
-    "title": "Ã propos",
-    "introduction": "Cette page est faite pour vous donner plus d'informations."
+    "title": "ABOUT ME",
+    "introduction": "This page is made to give you more informations."
+  },
+  "blog": {
+    "title": "BLOG",
+    "introduction": "This page is made to give you more informations."
+  },
+  "services": {
+    "title": "SERVICES",
+    "introduction": "This page is made to give you more informations."
+  },
+  "contact": {
+    "title": "CONTACT",
+    "introduction": "This page is made to give you more informations."
   }
 }

@@ -23,7 +23,7 @@
             </div>
           </div>
           <footer class="card-footer">
-            <nuxt-link :to="`/post/${post.id}`" 
+            <nuxt-link :to="$i18n.path(`post/${post.id}`)"
               class="card-footer-item">
               Read More
             </nuxt-link>
