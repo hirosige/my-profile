@@ -1,7 +1,9 @@
 <template>
   <div>
     <title-hero :title="$t('blog.title')"/>
-    <posts />
+    <div class="main-contents">
+      <posts />
+    </div>
   </div>
 </template>
 

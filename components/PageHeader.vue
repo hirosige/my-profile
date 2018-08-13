@@ -7,7 +7,12 @@
         </nuxt-link>
       </div>
 
-      <div class="nav-center">
+      <div class="nav">
+        <div class="nav-item">
+          <a href="mailto: hirosige1@gmail.com" class="tag is-primary" style="border-radius: 0;">
+            hirosige1@gmail.com
+          </a>
+        </div>
         <div v-if="$i18n.locale === 'ja'" class="nav-item">
           <nuxt-link :to="`/en` + $route.fullPath" class="button is-danger is-small" active-class="none" exact>
             {{ $t('links.english') }}

@@ -33,11 +33,9 @@
         </nav>
       </div>
     </section>
-    <section>
-      <div class="container">
-        test
-      </div>
-    </section>
+    <div class="main-contents">
+      test
+    </div>
   </div>
 </template>
 

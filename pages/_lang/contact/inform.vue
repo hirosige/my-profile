@@ -1,7 +1,7 @@
 <template>
   <div>
     <title-hero :title="$t('contact.inform.title')"/>
-    <div class="container" style="margin-top: 50px;">
+    <div class="main-contents">
       <div class="columns is-mobile is-centered">
         <div class="column is-three-quarters">
           <div class="field">

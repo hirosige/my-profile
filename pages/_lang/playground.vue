@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-contents">
     <p>
       <button @click="increment">{{ counter }}</button><br>
       <span class="flag-icon flag-icon-gr" />

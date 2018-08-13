@@ -1,11 +1,9 @@
 <template>
-  <div class="main-content">
-    <div class="container">
-      <h2 class="title is-2">{{ post.title }}</h2>
-      <div v-html="post.content" />
-      <br>
-      <h4 class="title is-5 is-marginless">by <strong>{{ post.author }}</strong> at <strong>{{ post.published }}</strong></h4>
-    </div>
+  <div class="main-contents">
+    <h2 class="title is-2">{{ post.title }}</h2>
+    <div v-html="post.content" />
+    <br>
+    <h4 class="title is-5 is-marginless">by <strong>{{ post.author }}</strong> at <strong>{{ post.published }}</strong></h4>
   </div>
 </template>
 

@@ -1,7 +1,9 @@
 <template>
   <div>
     <title-hero :title="$t('contact.thanks.title')"/>
-    thanks
+    <div class="main-contents">
+      thanks
+    </div>
   </div>
 </template>
 

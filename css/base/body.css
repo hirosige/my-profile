@@ -1,3 +1,8 @@
 body {
-  padding: 52px 0 265px;
+  padding: 52px 0 0;
+  color: var(--deep-green);
+}
+
+body .content {
+  color: var(--deep-green);
 }
