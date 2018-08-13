@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav has-shadow">
+  <nav class="nav header-fixed">
     <div class="container">
       <div class="nav-left">
         <nuxt-link :to="$i18n.path('')" class="nav-item title is-5">
@@ -20,64 +20,41 @@
         </div>
       </div>
 
-      <span id="nav-toggle" class="nav-toggle">
+      <span :class="{ 'is-active': menuActive }" class="nav-toggle" @click="menuToggle">
         <span/>
         <span/>
         <span/>
       </span>
 
-      <div id="nav-menu" class="nav-right nav-menu">
-        <nuxt-link 
-          :to="$i18n.path('about')" 
-          active-class="is-active" 
-          class="nav-item is-tab" 
-          exact
-        >
-          {{ $t('links.about') }}
-        </nuxt-link>
-
-        <nuxt-link 
-          :to="$i18n.path('service')" 
-          active-class="is-active" 
-          class="nav-item is-tab" 
-          exact
-        >
-          {{ $t('links.services') }}
-        </nuxt-link>
-
-        <nuxt-link 
-          :to="$i18n.path('blog')" 
-          active-class="is-active" 
-          class="nav-item is-tab" 
-          exact
-        >
-          {{ $t('links.blog') }}
-        </nuxt-link>
-
-        <nuxt-link 
-          :to="$i18n.path('contact')" 
-          active-class="is-active" 
-          class="nav-item is-tab" 
-          exact
-        >
-          {{ $t('links.contact') }}
-        </nuxt-link>
-
-        <nuxt-link 
-          :to="$i18n.path('playground')" 
-          active-class="is-active" 
-          class="nav-item is-tab" 
-          exact
-        >
-          {{ $t('links.playground') }}
-        </nuxt-link>
+      <div id="nav-menu" :class="{ 'is-active': menuActive }" class="nav-right nav-menu">
+        <my-link :to="$i18n.path('about')" :caption="$t('links.about')"/>
+        <my-link :to="$i18n.path('service')" :caption="$t('links.services')"/>
+        <my-link :to="$i18n.path('blog')" :caption="$t('links.blog')"/>
+        <my-link :to="$i18n.path('contact')" :caption="$t('links.contact')"/>
+        <my-link :to="$i18n.path('playground')" :caption="$t('links.playground')"/>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import MyLink from "~/components/MyLink.vue"
+
 export default {
-  name: "PageHeader"
+  name: "PageHeader",
+  components: {
+    MyLink
+  },
+  data() {
+    return {
+      menuActive: false
+    }
+  },
+  methods: {
+    menuToggle() {
+      this.$emit("toggle-menu")
+      this.menuActive = !this.menuActive
+    }
+  }
 }
 </script>

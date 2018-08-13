@@ -27,6 +27,18 @@
   },
   "contact": {
     "title": "CONTACT",
-    "introduction": "This page is made to give you more informations."
+    "introduction": "This page is made to give you more informations.",
+    "inform": {
+      "title": "CONTACT INFORM",
+      "name": "YOUR NAME",
+      "company_name": "YOUR COMPANY NAME",
+      "email": "EMAIL",
+      "subject": "SUBJECT",
+      "description": "DESCRIPTION",
+      "submit": "SUBMIT"
+    },
+    "thanks": {
+      "title": "THANKS FOR YOUR CONTACT"
+    }
   }
 }

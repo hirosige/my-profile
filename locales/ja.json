@@ -27,6 +27,18 @@
   },
   "contact": {
     "title": "CONTACT",
-    "introduction": "This page is made to give you more informations."
+    "introduction": "This page is made to give you more informations.",
+    "inform": {
+      "title": "CONTACT INFORM",
+      "name": "氏名",
+      "company_name": "会社名",
+      "email": "Eメールアドレス",
+      "subject": "件名",
+      "description": "詳細",
+      "submit": "送信"
+    },
+    "thanks": {
+      "title": "THANKS FOR YOUR CONTACT"
+    }
   }
 }

@@ -1,5 +1,10 @@
 <template>
-  <title-hero :title="$t('about.title')"/>
+  <section>
+    <title-hero :title="$t('about.title')"/>
+    <div class="main-contents">
+      test
+    </div>
+  </section>
 </template>
 
 <script>

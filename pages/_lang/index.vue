@@ -1,37 +1,44 @@
 <template>
-  <section class="hero is-primary is-large">
-    <div class="hero-body is-right is-bold">
-      <div class="container has-text-left">
-        <p class="title is-1">
-          {{ person.fields.name }}
-        </p>
-        <p class="subtitle is-4">
-          Hiros.io
-        </p>
-      </div>
-    </div>
-
-    <div class="hero-foot">
-      <nav class="tabs is-boxed is-fullwidth">
-        <div class="container">
-          <ul>
-            <li class="is-active">
-              <a>{{ $t('about.title') }}</a>
-            </li>
-            <li>
-              <a>{{ $t('service.title') }}</a>
-            </li>
-            <li>
-              <a>{{ $t('blog.title') }}</a>
-            </li>
-            <li>
-              <a>{{ $t('contact.title') }}</a>
-            </li>
-          </ul>
+  <div>
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body is-right is-bold">
+        <div class="container has-text-left">
+          <p class="title is-1">
+            {{ person.fields.name }}
+          </p>
+          <p class="subtitle is-4">
+            Hiros.io
+          </p>
         </div>
-      </nav>
-    </div>
-  </section>
+      </div>
+
+      <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+              <li class="is-active">
+                <a>{{ $t('about.title') }}</a>
+              </li>
+              <li>
+                <a>{{ $t('service.title') }}</a>
+              </li>
+              <li>
+                <a>{{ $t('blog.title') }}</a>
+              </li>
+              <li>
+                <a>{{ $t('contact.title') }}</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        test
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>

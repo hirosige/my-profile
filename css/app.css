@@ -5,9 +5,15 @@
 /* Tools */
 @import './tools/layout.css';
 
+/* Base */
+@import './base/body.css';
+
 /* Generic */
 @import './generic/normalize.css';
 @import './generic/generic.css';
 
 /* Components */
 @import './components/default.css';
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/main_contents.css';

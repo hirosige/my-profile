@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <page-header />
+    <page-header @toggle-menu="clickToggle" />
     <nuxt/>
     <PageFooter />
   </div>
@@ -15,6 +15,9 @@ export default {
   components: {
     PageHeader,
     PageFooter
+  },
+  methods: {
+    clickToggle() {}
   }
 }
 </script>
