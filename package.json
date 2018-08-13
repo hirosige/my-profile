@@ -10,11 +10,14 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "axios": "^0.18.0",
     "contentful": "^7.0.0",
+    "flag-icon-css": "^3.0.0",
     "nuxt": "^1.0.0",
     "sparkpost": "^2.1.2",
     "vue-flag-icon": "^1.0.6",
@@ -23,13 +26,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-vue": "^4.7.1",
     "outdated": "^0.1.1",
     "postcss-import": "^12.0.0",
-    "postcss-loader": "^3.0.0"
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.14.2"
   }
 }

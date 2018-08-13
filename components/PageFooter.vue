@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'PageFooter'
-  }
+export default {
+  name: "PageFooter"
+}
 </script>

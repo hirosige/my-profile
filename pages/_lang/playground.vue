@@ -2,23 +2,22 @@
   <div>
     <p>
       <button @click="increment">{{ counter }}</button><br>
+      <span class="flag-icon flag-icon-gr" />
     </p>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex"
 
 export default {
   fetch({ store }) {
-    // store.commit('increment')
+    store.commit("increment")
   },
-  computed: mapState([
-    'counter'
-  ]),
+  computed: mapState(["counter"]),
   methods: {
     increment() {
-      this.$store.commit('increment')
+      this.$store.commit("increment")
     }
   }
 }
