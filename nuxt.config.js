@@ -27,10 +27,12 @@ module.exports = {
   },
   plugins: [
     '~/plugins/i18n.js',
-    { src: '~/plugins/flag-icon.js', ssr: false }
+    { src: '~/plugins/flag-icon.js', ssr: false },
+    '~/plugins/globponents.js'
   ],
   loading: { color: '#3B8070' },
   build: {
+    vendor: ['axios'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

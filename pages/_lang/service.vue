@@ -1,5 +1,5 @@
 <template>
   <div>
-    Service
+    <title-hero :title="$t('service.title')"/>
   </div>
 </template>
