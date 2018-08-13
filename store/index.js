@@ -1,12 +1,15 @@
-export const state = () => ({
-  locales: ['en', 'ja'],
-  locale: 'ja'
-})
+import Vuex from 'vuex'
+import mutations from './mutations'
 
-export const mutations = {
-  SET_LANG(state, locale) {
-    if (state.locales.indexOf(locale) !== -1) {
-      state.locale = locale
-    }
-  }
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      locales: ['en', 'ja'],
+      locale: 'ja',
+      counter: 0
+    },
+    mutations
+  })
 }
+
+export default createStore;

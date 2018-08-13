@@ -62,6 +62,15 @@
           >
             {{ $t('links.contact') }}
           </nuxt-link>
+
+          <nuxt-link 
+            active-class="is-active" 
+            :to="$i18n.path('playground')" 
+            class="nav-item is-tab" 
+            exact
+          >
+            {{ $t('links.playground') }}
+          </nuxt-link>
         </div>
       </div>
     </nav>
@@ -69,6 +78,6 @@
 
 <script>
   export default {
-    name: 'PageFooter'
+    name: 'PageHeader'
   }
 </script>
