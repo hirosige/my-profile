@@ -20,7 +20,7 @@
                 <div class="content">
                   {{ post.author }}
                   <br>
-                  <time datetime="2016-1-1">{{ post.published }}</time>
+                  <time datetime="2016-1-1">{{ post.published }}</time>UPDATED
                 </div>
                 <footer class="card-footer">
                   <nuxt-link :to="$i18n.path(`post/${ post.id }`)" class="card-footer-item">
