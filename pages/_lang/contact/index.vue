@@ -4,7 +4,7 @@
     <div class="main-contents">
       <div class="columns is-mobile is-centered">
         <div class="column is-8">
-          <h1 class="has-text-centered">Hello World</h1>
+          <h1 class="has-text-centered">{{ $t('contact.clause.notice') }}</h1>
 
           <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub works as well!</p>
