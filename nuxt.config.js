@@ -46,6 +46,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
 
+        config.node = {
+          fs: "empty"
+        }
+
         const cssLoader = config.module.rules.find(
           loader => loader.test.toString() === "/\\.css$/"
         )
