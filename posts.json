@@ -1,7 +1,7 @@
 [
   {
       "id": 4,
-      "title": "Building universal JS apps with Nuxt.js",
+      "title": "Building universal JS",
       "summary": "Get introduced to Nuxt.js, and build great SSR Apps with Vue.js.",
       "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
       "author": "Jane Doe",
