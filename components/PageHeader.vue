@@ -32,11 +32,11 @@
       </span>
 
       <div id="nav-menu" :class="{ 'is-active': menuActive }" class="nav-right nav-menu">
-        <my-link :to="$i18n.path('about')" :caption="$t('links.about')"/>
-        <my-link :to="$i18n.path('service')" :caption="$t('links.services')"/>
-        <my-link :to="$i18n.path('blog')" :caption="$t('links.blog')"/>
-        <my-link :to="$i18n.path('contact')" :caption="$t('links.contact')"/>
-        <my-link :to="$i18n.path('playground')" :caption="$t('links.playground')"/>
+        <my-link :to="$i18n.path('about')" :caption="$t('links.about')" @click.native="clickLink"/>
+        <my-link :to="$i18n.path('service')" :caption="$t('links.services')" @click.native="clickLink"/>
+        <my-link :to="$i18n.path('blog')" :caption="$t('links.blog')" @click.native="clickLink"/>
+        <my-link :to="$i18n.path('contact')" :caption="$t('links.contact')" @click.native="clickLink"/>
+        <my-link :to="$i18n.path('playground')" :caption="$t('links.playground')" @click.native="clickLink"/>
       </div>
     </div>
   </nav>
@@ -59,6 +59,9 @@ export default {
     menuToggle() {
       this.$emit("toggle-menu")
       this.menuActive = !this.menuActive
+    },
+    clickLink() {
+      if (this.menuActive) this.menuActive = false
     }
   }
 }

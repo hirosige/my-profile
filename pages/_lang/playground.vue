@@ -1,9 +1,12 @@
 <template>
-  <div class="main-contents">
-    <p>
-      <button @click="increment">{{ counter }}</button><br>
-      <span class="flag-icon flag-icon-gr" />
-    </p>
+  <div>
+    <title-hero :title="$t('playground.title')"/>
+    <div class="main-contents">
+      <p>
+        <button @click="increment">{{ counter }}</button><br>
+        <span class="flag-icon flag-icon-gr" />
+      </p>
+    </div>
   </div>
 </template>
 

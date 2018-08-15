@@ -26,8 +26,11 @@
     "introduction": "This page is made to give you more informations."
   },
   "contact": {
-    "title": "CONTACT",
+    "title": "CONTACT CLAUSE",
     "introduction": "This page is made to give you more informations.",
+    "clause": {
+      "notice": "NOTICE"
+    },
     "inform": {
       "title": "CONTACT INFORM",
       "name": "氏名",
@@ -40,5 +43,8 @@
     "thanks": {
       "title": "THANKS FOR YOUR CONTACT"
     }
+  },
+  "playground": {
+    "title": "PLAYGROUND"
   }
 }

@@ -26,19 +26,25 @@
     "introduction": "This page is made to give you more informations."
   },
   "contact": {
-    "title": "CONTACT",
+    "title": "CONTACT CLAUSE",
     "introduction": "This page is made to give you more informations.",
+    "clause": {
+      "notice": "NOTICE"
+    },
     "inform": {
       "title": "CONTACT INFORM",
-      "name": "YOUR NAME",
-      "company_name": "YOUR COMPANY NAME",
-      "email": "EMAIL",
-      "subject": "SUBJECT",
-      "description": "DESCRIPTION",
-      "submit": "SUBMIT"
+      "name": "氏名",
+      "company_name": "会社名",
+      "email": "Eメールアドレス",
+      "subject": "件名",
+      "description": "詳細",
+      "submit": "送信"
     },
     "thanks": {
       "title": "THANKS FOR YOUR CONTACT"
     }
+  },
+  "playground": {
+    "title": "PLAYGROUND"
   }
 }
