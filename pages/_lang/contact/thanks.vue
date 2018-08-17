@@ -8,5 +8,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return { title: this.$t("contact.thanks.title") }
+  }
+}
 </script>

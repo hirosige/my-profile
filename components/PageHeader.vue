@@ -2,8 +2,8 @@
   <nav class="nav header-fixed">
     <div class="container">
       <div class="nav-left">
-        <nuxt-link :to="$i18n.path('')" class="nav-item title is-5">
-          Hiros.io
+        <nuxt-link :to="$i18n.path('')" class="title">
+          <img src="~/assets/logo.png" class="image" style="height: 50px; margin-left: 10px;">
         </nuxt-link>
       </div>
 
@@ -60,8 +60,11 @@ export default {
       this.$emit("toggle-menu")
       this.menuActive = !this.menuActive
     },
+    inactivateMenu() {
+      this.menuActive = false
+    },
     clickLink() {
-      if (this.menuActive) this.menuActive = false
+      this.inactivateMenu()
     }
   }
 }

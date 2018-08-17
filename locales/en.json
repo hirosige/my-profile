@@ -33,12 +33,12 @@
     },
     "inform": {
       "title": "CONTACT INFORM",
-      "name": "氏名",
-      "company_name": "会社名",
-      "email": "Eメールアドレス",
-      "subject": "件名",
-      "description": "詳細",
-      "submit": "送信"
+      "name": "NAME",
+      "company_name": "COMPANY NAME",
+      "email": "EMAIL ADDRESS",
+      "subject": "SUBJECT",
+      "description": "DESCRIPTION",
+      "submit": "SEND"
     },
     "thanks": {
       "title": "THANKS FOR YOUR CONTACT"
@@ -46,5 +46,19 @@
   },
   "playground": {
     "title": "PLAYGROUND"
+  },
+  "messages": {
+    "error": {
+      "inform": {
+        "name": "Name is required",
+        "company_name": "Company Name is required",
+        "email": "Email Address is required",
+        "subject": "Subject is required",
+        "description": "Description is required"
+      }
+    },
+    "success": {
+      "inform": "Your message successfully sent, thank you for your inquiry."
+    }
   }
 }

@@ -85,8 +85,8 @@ import Posts from "~/components/Posts.vue"
 const client = createClient()
 
 export default {
-  head: {
-    title: "Blog"
+  head() {
+    return { title: this.$t("blog.title") }
   },
   components: {
     Posts

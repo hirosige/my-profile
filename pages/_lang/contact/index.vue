@@ -35,6 +35,9 @@
 
 <script>
 export default {
+  head() {
+    return { title: this.$t("contact.title") }
+  },
   methods: {
     iAgree: function() {
       this.$router.push(this.$i18n.path("contact/inform"))

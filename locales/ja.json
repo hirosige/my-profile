@@ -46,5 +46,19 @@
   },
   "playground": {
     "title": "PLAYGROUND"
+  },
+  "messages": {
+    "error": {
+      "inform": {
+        "name": "氏名は必須入力です。",
+        "company_name": "会社名は必須入力です。",
+        "email": "Eメールアドレスは必須入力です",
+        "subject": "件名は必須入力です。",
+        "description": "詳細は必須入力です。"
+      }
+    },
+    "success": {
+      "inform": "お問い合わせありがとうございます。内容は問題なく送信されました。"
+    }
   }
 }

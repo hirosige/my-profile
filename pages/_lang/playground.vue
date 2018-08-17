@@ -14,6 +14,9 @@
 import { mapState } from "vuex"
 
 export default {
+  head() {
+    return { title: this.$t("playground.title") }
+  },
   fetch({ store }) {
     store.commit("increment")
   },
