@@ -22,18 +22,28 @@ module.exports = {
     "@fortawesome/fontawesome-free-webfonts",
     "@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
     "@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
-    "@fortawesome/fontawesome-free-webfonts/css/fa-solid.css"
+    "@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+    { src: "~/node_modules/highlight.js/styles/hopscotch.css", lang: "css" }
   ],
   env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+    key: {
+      CTF_SPACE_ID: config.profile.CTF_SPACE_ID,
+      CTF_CDA_ACCESS_TOKEN: config.profile.CTF_CDA_ACCESS_TOKEN,
+      CTF_PERSON_ID: config.profile.CTF_PERSON_ID,
+      CTF_BLOG_POST_TYPE_ID: config.profile.CTF_BLOG_POST_TYPE_ID,
+      CTF_BLOG_PERSON_ID: config.blog.CTF_PERSON_ID,
+      CTF_BLOG_SPACE_ID: config.blog.CTF_SPACE_ID,
+      CTF_BLOG_CDA_ACCESS_TOKEN: config.blog.CTF_CDA_ACCESS_TOKEN
+    }
   },
   router: {
     middleware: "i18n"
   },
-  modules: ["nuxt-device-detect"],
+  modules: ["nuxt-device-detect", "@nuxtjs/markdownit"],
+  markdownit: {
+    injected: true,
+    use: ["markdown-it-highlightjs"]
+  },
   plugins: ["~/plugins/i18n.js", "~/plugins/globponents.js"],
   loading: { color: "#3B8070" },
   build: {

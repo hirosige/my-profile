@@ -3,66 +3,20 @@
     <title-hero :title="$t('blog.title')"/>
     <div class="main-contents" style="padding: 40px;">
       <div class="columns">
-        <div class="column is-narrow">
+        <div class="column is-3">
           <nav class="panel">
-            <p class="panel-heading is-primary">
-              repositories
+            <p class="panel-heading" style="background: var(--green); color: #ffffff;">
+              Filter by Tags
             </p>
-            <div class="panel-block">
-              <p class="control has-icons-left">
-                <input class="input is-small" type="text" placeholder="search">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-search" aria-hidden="true" />
-                </span>
-              </p>
-            </div>
             <p class="panel-tabs">
               <a class="is-active">all</a>
-              <a>public</a>
-              <a>private</a>
-              <a>sources</a>
-              <a>forks</a>
             </p>
-            <a class="panel-block is-active">
+            <a v-for="(category, index) in categories" :key="index" class="panel-block">
               <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true" />
+                <i class="fas fa-tag" aria-hidden="true" />
               </span>
-              bulma
+              {{ category.fields.name }}
             </a>
-            <a class="panel-block">
-              <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true" />
-              </span>
-              marksheet
-            </a>
-            <a class="panel-block">
-              <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true" />
-              </span>
-              minireset.css
-            </a>
-            <a class="panel-block">
-              <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true" />
-              </span>
-              jgthms.github.io
-            </a>
-            <a class="panel-block">
-              <span class="panel-icon">
-                <i class="fas fa-code-branch" aria-hidden="true" />
-              </span>
-              daniellowtw/infboard
-            </a>
-            <a class="panel-block">
-              <span class="panel-icon">
-                <i class="fas fa-code-branch" aria-hidden="true" />
-              </span>
-              mojs
-            </a>
-            <label class="panel-block">
-              <input type="checkbox">
-              remember me
-            </label>
             <div class="panel-block">
               <button class="button is-link is-outlined is-fullwidth">
                 reset all filters
@@ -71,7 +25,11 @@
           </nav>
         </div>
         <div class="column">
-          <posts />
+          <div class="columns is-multiline">
+            <div v-for="(post, index) in posts" :key="index" class="column is-half">
+              <posts :post="post" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -79,10 +37,10 @@
 </template>
 
 <script>
-import { createClient } from "~/plugins/contentful.js"
+import { createBlogClient } from "~/plugins/contentful.js"
 import Posts from "~/components/Posts.vue"
 
-const client = createClient()
+const client = createBlogClient()
 
 export default {
   head() {
@@ -94,17 +52,23 @@ export default {
   asyncData({ env }) {
     return Promise.all([
       client.getEntries({
-        "sys.id": env.CTF_PERSON_ID
+        "sys.id": env.key.CTF_BLOG_PERSON_ID
       }),
       client.getEntries({
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        content_type: "blogPost",
+        order: "-sys.createdAt"
+      }),
+      client.getEntries({
+        content_type: "postCategories",
         order: "-sys.createdAt"
       })
     ])
-      .then(([entries, posts]) => {
+      .then(([entries, posts, categories]) => {
+        console.log(posts.items)
         return {
           person: entries.items[0],
-          posts: posts.items
+          posts: posts.items,
+          categories: categories.items
         }
       })
       .catch(console.error)

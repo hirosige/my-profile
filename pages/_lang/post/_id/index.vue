@@ -1,37 +1,49 @@
 <template>
   <div class="main-contents">
-    <h2 class="title is-2">{{ post.title }}</h2>
-    <div v-html="post.content" />
-    <br>
-    <h4 class="title is-5 is-marginless">by <strong>{{ post.author }}</strong> at <strong>{{ post.published }}</strong></h4>
+    <div class="container">
+      <p>{{ post.fields.title }}</p>
+      <p>{{ post.fields.heroImage.fields.file.url }}</p>
+      <p>{{ post.fields.description }}</p>
+      <div v-html="$md.render(post.fields.body)" />
+      <p>{{ post.fields.author.fields.name }}</p>
+      <p>{{ post.fields.tags[0].fields.name }}</p>
+    </div>
+    
   </div>
 </template>
 
 <script>
-import posts from "~/posts.json"
+import { createBlogClient } from "~/plugins/contentful.js"
+const client = createBlogClient()
 
 export default {
-  validate({ params }) {
-    return /^\d+$/.test(params.id)
-  },
-  asyncData({ params }, callback) {
-    let post = posts.find(post => post.id === parseInt(params.id))
-    if (post) {
-      callback(null, { post })
-    } else {
-      callback({ statusCode: 404, message: "Post not found" })
-    }
+  asyncData({ env, params }) {
+    return Promise.all([
+      client.getEntries({
+        "sys.id": env.key.CTF_BLOG_PERSON_ID
+      }),
+      client.getEntries({
+        content_type: "blogPost",
+        "fields.slug": params.id
+      })
+    ])
+      .then(([entries, post]) => {
+        console.log(post.items)
+        return {
+          person: entries.items[0],
+          post: post.items[0]
+        }
+      })
+      .catch(console.error)
   },
   head() {
     return {
-      title: this.post.title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.post.summary
-        }
-      ]
+      title: "test"
+    }
+  },
+  data() {
+    return {
+      model: "# test ```php <?php echo 'hello'; ```"
     }
   }
 }
