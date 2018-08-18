@@ -7,14 +7,14 @@
         <nav class="level">
           <div class="level-item">
             <article class="message is-primary">
-              <div class="message-body">
-                <p>バンコクを拠点にフルスタックエンジニアとして企業、<br>フリーランス開業しました。</p>
+              <div class="message-body positive">
+                <p>バンコクを拠点に<strong class="underline">フルスタックエンジニア</strong>として企業、<br>フリーランス開業しました。</p>
                 <br>
-                <p>バンコクに滞在しているものの、日本からの仕事依頼も募集しております。<br>よろしくお願いします。</p>
+                <p><strong class="underline">バンコク</strong>に滞在しているものの、<strong class="underline">日本からの仕事依頼</strong>も受けてます。<br>よろしくお願いします。</p>
                 <br>
                 <p>以前まで、バンコクを拠点にタイ人を管理して、開発する企業におりましたが、<br>BtoB特有のメジャーな技術しか使えなく、自分の好きな技術にフォーカス出来ない状況に嫌気が指し、<br>企業兼、フリーランスになる事に決めました。</p>
                 <br>
-                <p>基本的には、WEB系のフルスタックエンジニアですが、<br>モバイル系等々、幅広い分野で活躍して行きたいので、ご相談大歓迎です。</p>
+                <p>基本的には、<strong class="underline">WEB系のフルスタックエンジニア</strong>ですが、<br><strong class="underline">モバイル系等々、幅広い分野</strong>で活躍して行きたいので、ご相談大歓迎です。</p>
                 <br>
               </div>
             </article>
@@ -25,10 +25,10 @@
       <div class="container">
         <div class="fix-width">
           <skill-chart :skills="frontend" category="Frontend" /><br>
-          <skill-chart :skills="frontend" category="Backend" /><br>
-          <skill-chart :skills="frontend" category="Middleware" /><br>
-          <skill-chart :skills="frontend" category="Mobile" /><br>
-          <skill-chart :skills="frontend" category="Server Site" /><br>
+          <skill-chart :skills="backend" category="Backend" /><br>
+          <skill-chart :skills="middleware" category="Middleware" /><br>
+          <skill-chart :skills="mobile" category="Mobile" /><br>
+          <skill-chart :skills="serverSide" category="Server Site" /><br>
         </div>
       </div>
     </div>
@@ -56,12 +56,39 @@ export default {
         "fields.category.sys.contentType.sys.id": "skillCategories",
         "fields.category.fields.name": "Frontend",
         order: "-sys.updatedAt"
+      }),
+      client.getEntries({
+        content_type: "skills",
+        "fields.category.sys.contentType.sys.id": "skillCategories",
+        "fields.category.fields.name": "Backend",
+        order: "-sys.updatedAt"
+      }),
+      client.getEntries({
+        content_type: "skills",
+        "fields.category.sys.contentType.sys.id": "skillCategories",
+        "fields.category.fields.name": "Middleware",
+        order: "-sys.updatedAt"
+      }),
+      client.getEntries({
+        content_type: "skills",
+        "fields.category.sys.contentType.sys.id": "skillCategories",
+        "fields.category.fields.name": "Mobile",
+        order: "-sys.updatedAt"
+      }),
+      client.getEntries({
+        content_type: "skills",
+        "fields.category.sys.contentType.sys.id": "skillCategories",
+        "fields.category.fields.name": "Server Side",
+        order: "-sys.updatedAt"
       })
     ])
-      .then(([frontend]) => {
-        console.log(frontend.items)
+      .then(([frontend, backend, middleware, mobile, serverSide]) => {
         return {
-          frontend: frontend.items
+          frontend: frontend.items,
+          backend: backend.items,
+          middleware: middleware.items,
+          mobile: mobile.items,
+          serverSide: serverSide.items
         }
       })
       .catch(console.error)
@@ -70,7 +97,7 @@ export default {
 </script>
 
 <style>
-.message-body > * {
+.message-body.positive > * {
   color: #1da08d;
 }
 
@@ -78,8 +105,12 @@ export default {
   margin-bottom: 0;
 }
 
+strong.underline {
+  text-decoration: underline;
+}
+
 .media-left.cap {
-  width: 90px;
+  width: 140px;
   border-right: 1px solid var(--green);
   margin-top: 0;
 }
