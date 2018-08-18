@@ -50,37 +50,21 @@ export default {
     SkillChart
   },
   asyncData() {
-    return Promise.all([
-      client.getEntries({
+    let getSkills = searchKeyword => {
+      return client.getEntries({
         content_type: "skills",
         "fields.category.sys.contentType.sys.id": "skillCategories",
-        "fields.category.fields.name": "Frontend",
-        order: "-sys.updatedAt"
-      }),
-      client.getEntries({
-        content_type: "skills",
-        "fields.category.sys.contentType.sys.id": "skillCategories",
-        "fields.category.fields.name": "Backend",
-        order: "-sys.updatedAt"
-      }),
-      client.getEntries({
-        content_type: "skills",
-        "fields.category.sys.contentType.sys.id": "skillCategories",
-        "fields.category.fields.name": "Middleware",
-        order: "-sys.updatedAt"
-      }),
-      client.getEntries({
-        content_type: "skills",
-        "fields.category.sys.contentType.sys.id": "skillCategories",
-        "fields.category.fields.name": "Mobile",
-        order: "-sys.updatedAt"
-      }),
-      client.getEntries({
-        content_type: "skills",
-        "fields.category.sys.contentType.sys.id": "skillCategories",
-        "fields.category.fields.name": "Server Side",
+        "fields.category.fields.name": searchKeyword,
         order: "-sys.updatedAt"
       })
+    }
+
+    return Promise.all([
+      getSkills("Frontend"),
+      getSkills("Backend"),
+      getSkills("Middleware"),
+      getSkills("Mobile"),
+      getSkills("Server Side")
     ])
       .then(([frontend, backend, middleware, mobile, serverSide]) => {
         return {
@@ -110,7 +94,7 @@ strong.underline {
 }
 
 .media-left.cap {
-  width: 140px;
+  width: 125px;
   border-right: 1px solid var(--green);
   margin-top: 0;
 }

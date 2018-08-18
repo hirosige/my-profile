@@ -23,6 +23,7 @@
     "moment": "^2.22.2",
     "net": "^1.0.2",
     "nuxt": "^1.0.0",
+    "nuxt-device-detect": "^1.1.1",
     "sparkpost": "^2.1.2",
     "tls": "0.0.1",
     "vue-flag-icon": "^1.0.6",

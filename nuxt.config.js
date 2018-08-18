@@ -33,6 +33,7 @@ module.exports = {
   router: {
     middleware: "i18n"
   },
+  modules: ["nuxt-device-detect"],
   plugins: ["~/plugins/i18n.js", "~/plugins/globponents.js"],
   loading: { color: "#3B8070" },
   build: {

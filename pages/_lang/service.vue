@@ -75,7 +75,6 @@ export default {
       })
     ])
       .then(([services]) => {
-        console.log(services.items)
         return {
           services: services.items
         }
