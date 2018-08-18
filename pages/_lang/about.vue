@@ -23,11 +23,13 @@
       </section>
       <section-title :title="$t('about.title')" style="margin-top: 50px;" />
       <div class="container">
-        <skill-chart :skills="frontend" category="Frontend" /><br>
-        <skill-chart :skills="frontend" category="Backend" /><br>
-        <skill-chart :skills="frontend" category="Middleware" /><br>
-        <skill-chart :skills="frontend" category="Mobile" /><br>
-        <skill-chart :skills="frontend" category="Server Site" /><br>
+        <div class="fix-width">
+          <skill-chart :skills="frontend" category="Frontend" /><br>
+          <skill-chart :skills="frontend" category="Backend" /><br>
+          <skill-chart :skills="frontend" category="Middleware" /><br>
+          <skill-chart :skills="frontend" category="Mobile" /><br>
+          <skill-chart :skills="frontend" category="Server Site" /><br>
+        </div>
       </div>
     </div>
   </section>
@@ -80,5 +82,12 @@ export default {
   width: 90px;
   border-right: 1px solid var(--green);
   margin-top: 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .fix-width {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
 }
 </style>
