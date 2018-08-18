@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav header-fixed">
+  <nav class="nav header-fixed has-shadow">
     <div class="container">
       <div class="nav-left">
         <nuxt-link :to="$i18n.path('')" class="title">
@@ -36,20 +36,14 @@
         <my-link :to="$i18n.path('service')" :caption="$t('links.services')" @click.native="clickLink"/>
         <my-link :to="$i18n.path('blog')" :caption="$t('links.blog')" @click.native="clickLink"/>
         <my-link :to="$i18n.path('contact')" :caption="$t('links.contact')" @click.native="clickLink"/>
-        <my-link :to="$i18n.path('playground')" :caption="$t('links.playground')" @click.native="clickLink"/>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import MyLink from "~/components/MyLink.vue"
-
 export default {
   name: "PageHeader",
-  components: {
-    MyLink
-  },
   data() {
     return {
       menuActive: false

@@ -2,9 +2,7 @@
   <div>
     <title-hero :title="$t('contact.inform.title')"/>
     <div class="main-contents">
-      <h4 class="title is-4 has-text-centered" style="margin-bottom: 50px;">
-        <span style="border-bottom: 1px solid; padding-bottom: 5px; color: #1DA08D;">{{ $t('contact.inform.title') }}</span>
-      </h4>
+      <section-title :title="$t('contact.inform.title')" />
       
       <div class="columns is-mobile is-centered">
         <div class="column is-three-quarters">

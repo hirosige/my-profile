@@ -1,8 +1,8 @@
 import Vuex from "vuex"
 import mutations from "./mutations"
 
-const createStore = () => {
-  return new Vuex.Store({
+const store = () =>
+  new Vuex.Store({
     state: {
       locales: ["en", "ja"],
       locale: "ja",
@@ -10,6 +10,5 @@ const createStore = () => {
     },
     mutations
   })
-}
 
-export default createStore
+export default store
