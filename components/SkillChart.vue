@@ -10,8 +10,8 @@
               UP: {{ $store.state.locale, skill.sys.updatedAt | moment }}
             </span>
           </div>
-          <div class="media-content" style="padding-top: 17px;">
-            <progress :value="skill.fields.proficiency" class="progress is-primary" max="100" />
+          <div class="media-content" style="padding-top: 12px;">
+            <progress :value="skill.fields.proficiency" class="progress is-primary is-large" max="100" />
           </div>
         </article>
       </div>

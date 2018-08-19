@@ -1,14 +1,23 @@
 <template>
-  <div class="main-contents">
-    <div class="container">
-      <p>{{ post.fields.title }}</p>
-      <p>{{ post.fields.heroImage.fields.file.url }}</p>
-      <p>{{ post.fields.description }}</p>
-      <div v-html="$md.render(post.fields.body)" />
-      <p>{{ post.fields.author.fields.name }}</p>
-      <p>{{ post.fields.tags[0].fields.name }}</p>
+  <div>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <p>{{ post.fields.title }}</p>
+          </h1>
+        </div>
+      </div>
+    </section>
+    <div class="main-contents">
+      <div class="container">
+        <div class="fix-width">
+          <div class="content">
+            <div v-html="$md.render(post.fields.body)" />
+          </div>
+        </div>
+      </div>
     </div>
-    
   </div>
 </template>
 
@@ -28,7 +37,6 @@ export default {
       })
     ])
       .then(([entries, post]) => {
-        console.log(post.items)
         return {
           person: entries.items[0],
           post: post.items[0]
@@ -41,10 +49,28 @@ export default {
       title: "test"
     }
   },
-  data() {
-    return {
-      model: "# test ```php <?php echo 'hello'; ```"
+  methods: {
+    embedImage(url) {
+      return `background-image: url('${url}'');`
     }
   }
 }
 </script>
+
+<style>
+pre {
+  padding: 0;
+  font-size: 0.8rem;
+  magin: 0;
+}
+code {
+  margin: 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .fix-width {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
+</style>
