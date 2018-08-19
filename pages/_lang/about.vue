@@ -101,8 +101,8 @@ strong.underline {
 
 @media screen and (min-width: 0px) and (max-width: 1000px) {
   .fix-width {
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 </style>

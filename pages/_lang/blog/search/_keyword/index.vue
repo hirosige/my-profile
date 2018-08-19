@@ -1,8 +1,7 @@
 <template>
   <div>
     <title-hero :title="$t('blog.title')"/>
-    <div class="main-contents" style="padding-right: 40px; padding-left: 40px;">
-      <section-title :title="$t('blog.title')" /> 
+    <div class="main-contents" style="padding: 40px;">
       <div class="columns">
         <div class="column is-3">
           <nav class="panel">
@@ -10,9 +9,11 @@
               Filter by Tags
             </p>
             <p class="panel-tabs">
-              <a class="is-active">ALL</a>
+              <nuxt-link :to="$i18n.path('blog')" class="is-active">
+                All
+              </nuxt-link>
             </p>
-            <p v-for="(category, index) in categories" :key="index" class="panel-block">
+            <p v-for="(category, index) in categories" :key="index" :class="{ 'is-active': checkCategory($route.params.keyword, category.fields.name) }" class="panel-block">
               <nuxt-link :to="$i18n.path(`blog/search/${ category.fields.name }`)">
                 <span class="panel-icon">
                   <i class="fas fa-tag" aria-hidden="true" />
@@ -20,6 +21,7 @@
                 {{ category.fields.name }}
               </nuxt-link>
             </p>
+            
             <div class="panel-block">
               <button class="button is-link is-outlined is-fullwidth">
                 reset all filters
@@ -52,7 +54,17 @@ export default {
   components: {
     Posts
   },
-  asyncData({ env }) {
+  data() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    checkCategory(keyword, category) {
+      return keyword == category
+    }
+  },
+  asyncData({ env, params }) {
     return Promise.all([
       client.getEntries({
         "sys.id": env.key.CTF_BLOG_PERSON_ID
@@ -67,9 +79,19 @@ export default {
       })
     ])
       .then(([entries, posts, categories]) => {
+        let newPosts = posts.items.filter(post => {
+          let check = false
+
+          if (typeof post.fields.tags === "undefined") return false
+
+          post.fields.tags.forEach(tag => {
+            if (tag.fields.name === params.keyword) check = true
+          })
+          return check
+        })
         return {
           person: entries.items[0],
-          posts: posts.items,
+          posts: newPosts,
           categories: categories.items
         }
       })

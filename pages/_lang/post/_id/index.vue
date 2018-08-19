@@ -10,11 +10,9 @@
       </div>
     </section>
     <div class="main-contents">
-      <div class="container">
-        <div class="fix-width">
-          <div class="content">
-            <div v-html="$md.render(post.fields.body)" />
-          </div>
+      <div class="fix-width">
+        <div class="content">
+          <div v-html="$md.render(post.fields.body)" />
         </div>
       </div>
     </div>
@@ -60,17 +58,26 @@ export default {
 <style>
 pre {
   padding: 0;
-  font-size: 0.8rem;
-  magin: 0;
+  font-size: 0.7rem;
+  margin: 0;
 }
 code {
   margin: 0;
 }
 
+.fix-width {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
 @media screen and (min-width: 0px) and (max-width: 1000px) {
   .fix-width {
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .fix-width pre {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 </style>
