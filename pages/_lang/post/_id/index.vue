@@ -9,6 +9,7 @@
         </div>
       </div>
     </section>
+    <img :src="post.fields.heroImage.fields.file.url" style="height: 500px; width: 100%;">
     <div class="main-contents">
       <div class="fix-width">
         <div class="content">
@@ -35,6 +36,7 @@ export default {
       })
     ])
       .then(([entries, post]) => {
+        console.log(post.items[0].fields.heroImage.fields.file.url)
         return {
           person: entries.items[0],
           post: post.items[0]
