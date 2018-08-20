@@ -1,7 +1,16 @@
 # hiro_site
 
-> Nuxt.js project
+## Contributions
 
+* Vue.js
+* Nuxt.js
+* Bluma CSS
+* Post CSS
+* Contentful
+* AWS Lambda (Send Email)
+* SparkPost (Send Email)
+* Surge
+  
 ## Build Setup
 
 ``` bash
@@ -41,4 +50,3 @@ View Template Refecence
 [https://bulma.io/](https://bulma.io/)
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-

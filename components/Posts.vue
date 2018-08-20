@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src="https://normalblog.net/system/wp-content/uploads/2017/10/react.png" alt="Placeholder image">
+          <img :src="post.fields.heroImage.fields.file.url" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content">
@@ -15,6 +15,9 @@
         <div class="media">
           <div class="media-content">
             <p class="title is-5">{{ post.fields.title }}</p>
+            <div class="description">
+              {{ post.fields.description | abbe }}
+            </div>
           </div>
         </div>
         <div class="content">
@@ -41,6 +44,10 @@ export default {
     moment: (locale, date) => {
       moment.locale(locale)
       return moment(date).format("LL")
+    },
+    abbe: text => {
+      if (text.length < 180) return text
+      else return `${text.slice(0, 180)} ...`
     }
   },
   props: { post: { type: Object, default: () => {} } }

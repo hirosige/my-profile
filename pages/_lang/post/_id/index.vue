@@ -1,15 +1,10 @@
 <template>
   <div>
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <p>{{ post.fields.title }}</p>
-          </h1>
-        </div>
+    <div :style="{ 'background-image': 'url(' + post.fields.heroImage.fields.file.url + ')' }" class="contents-bg">
+      <div class="contents">
+        <h1 class="title">{{ post.fields.title }}</h1>
       </div>
-    </section>
-    <img :src="post.fields.heroImage.fields.file.url" style="height: 500px; width: 100%;">
+    </div>
     <div class="main-contents">
       <div class="fix-width">
         <div class="content">
@@ -58,13 +53,47 @@ export default {
 </script>
 
 <style>
-pre {
-  padding: 0;
-  font-size: 0.7rem;
+.contents-bg {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  margin-top: 0;
+}
+
+.contents {
+  margin-top: 0;
+  background-color: rgba(0, 209, 178, 0.7);
+  height: 500px;
+}
+
+.contents h1 {
+  color: #fff;
   margin: 0;
+  line-height: 500px;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.content pre {
+  padding: 0;
+}
+
+.content h3 {
+  color: var(--deep-green);
+  padding-left: 10px;
+  border-bottom: 1px solid var(--deep-green);
+  border-top: 1px solid var(--deep-green);
+  border-left: 5px solid var(--deep-green);
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+
+pre {
+  font-size: 0.8rem;
 }
 code {
   margin: 0;
+  border: 0;
 }
 
 .fix-width {
