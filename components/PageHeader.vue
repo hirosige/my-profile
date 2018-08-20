@@ -2,7 +2,7 @@
   <nav class="nav header-fixed has-shadow">
     <div class="container">
       <div class="nav-left">
-        <nuxt-link :to="$i18n.path('')" class="title">
+        <nuxt-link :to="$i18n.path('')" class="title" @click.native="clickLink">
           <img src="~/assets/logo.png" class="image" style="height: 50px; margin-left: 10px;">
         </nuxt-link>
       </div>

@@ -14,7 +14,7 @@
         </div>
         <div class="media">
           <div class="media-content">
-            <p class="title is-5">{{ post.fields.title }}</p>
+            <p class="title is-4">{{ post.fields.title }}</p>
             <div class="description">
               {{ post.fields.description | abbe }}
             </div>
